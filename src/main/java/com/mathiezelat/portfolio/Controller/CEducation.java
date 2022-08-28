@@ -23,7 +23,7 @@ import com.mathiezelat.portfolio.Service.SEducation;
 
 @Controller
 @RequestMapping("/education")
-@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
+@CrossOrigin(origins = "**")
 public class CEducation {
     @Autowired
     SEducation sEducation;

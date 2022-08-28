@@ -33,7 +33,7 @@ import com.mathiezelat.portfolio.Security.jwt.JwtProvider;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
+@CrossOrigin(origins = "**")
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;

@@ -19,7 +19,7 @@ import com.mathiezelat.portfolio.Entity.Person;
 import com.mathiezelat.portfolio.Interface.IPersonService;
 
 @RestController
-@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
+@CrossOrigin(origins = "**")
 @RequestMapping("/persons")
 public class PersonController {
     @Autowired
