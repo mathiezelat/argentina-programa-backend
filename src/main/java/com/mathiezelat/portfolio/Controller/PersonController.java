@@ -19,7 +19,7 @@ import com.mathiezelat.portfolio.Entity.Person;
 import com.mathiezelat.portfolio.Interface.IPersonService;
 
 @RestController
-@CrossOrigin(origins = "**")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/persons")
 public class PersonController {
     @Autowired

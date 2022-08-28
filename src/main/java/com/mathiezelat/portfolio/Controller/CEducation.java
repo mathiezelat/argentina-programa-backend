@@ -23,7 +23,7 @@ import com.mathiezelat.portfolio.Service.SEducation;
 
 @Controller
 @RequestMapping("/education")
-@CrossOrigin(origins = "**")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CEducation {
     @Autowired
     SEducation sEducation;
