@@ -22,7 +22,7 @@ public class ImpPersonService implements IPersonService {
     }
 
     @Override
-    public Person getOnePerson(Long id) {
+    public Person getOnePerson(int id) {
         Person person = iPersonRepo.findById(id).orElse(null);
         return person;
     }
@@ -33,7 +33,7 @@ public class ImpPersonService implements IPersonService {
     }
 
     @Override
-    public void deletePerson(Long id) {
+    public void deletePerson(int id) {
         iPersonRepo.deleteById(id);
     }
 

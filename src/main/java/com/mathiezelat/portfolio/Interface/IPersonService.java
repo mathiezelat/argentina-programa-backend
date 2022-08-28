@@ -7,9 +7,9 @@ import com.mathiezelat.portfolio.Entity.Person;
 public interface IPersonService {
     public List<Person> getAllPersons();
 
-    public Person getOnePerson(Long id);
+    public Person getOnePerson(int id);
 
     public void savePerson(Person person);
 
-    public void deletePerson(Long id);
+    public void deletePerson(int id);
 }

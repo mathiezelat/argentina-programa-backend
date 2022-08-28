@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.mathiezelat.portfolio.Entity.Person;
 
 @Repository
-public interface IPersonRepository extends JpaRepository<Person, Long> {
+public interface IPersonRepository extends JpaRepository<Person, Integer> {
 
 }
