@@ -11,7 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class dtoExperience {
     @NotBlank
-    private String nameE;
+    private String name;
     @NotBlank
-    private String descriptionE;
+    private String description;
+    @NotBlank
+    private String company;
+    @NotBlank
+    private String period;
+    @NotBlank
+    private String position;
+    @NotBlank
+    private String logo;
 }

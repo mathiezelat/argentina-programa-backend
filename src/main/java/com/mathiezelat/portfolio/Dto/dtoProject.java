@@ -9,15 +9,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class dtoEducation {
+public class dtoProject {
     @NotBlank
     private String name;
     @NotBlank
     private String description;
     @NotBlank
-    private String institution;
+    private String date;
     @NotBlank
-    private String period;
+    private String url;
     @NotBlank
-    private String logo;
+    private String img;
 }

@@ -47,14 +47,15 @@ public class CEducation {
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody dtoEducation dtoEdu) {
-        if (StringUtils.isBlank(dtoEdu.getNameE())) {
+        if (StringUtils.isBlank(dtoEdu.getName())) {
             return new ResponseEntity(new Message("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (sEducation.existsByNameE(dtoEdu.getNameE())) {
+        if (sEducation.existsByName(dtoEdu.getName())) {
             return new ResponseEntity(new Message("El nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Education education = new Education(0, dtoEdu.getNameE(), dtoEdu.getDescriptionE());
+        Education education = new Education(0, dtoEdu.getName(), dtoEdu.getDescription(),
+                dtoEdu.getInstitution(), dtoEdu.getPeriod(), dtoEdu.getLogo());
         sEducation.save(education);
 
         return new ResponseEntity(new Message("Educacion creada"), HttpStatus.OK);
@@ -65,17 +66,20 @@ public class CEducation {
         if (!sEducation.existsById(id)) {
             return new ResponseEntity(new Message("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        if (sEducation.existsByNameE(dtoEdu.getNameE())
-                && sEducation.getByNameE(dtoEdu.getNameE()).get().getId() != id) {
+        if (sEducation.existsByName(dtoEdu.getName())
+                && sEducation.getByName(dtoEdu.getName()).get().getId() != id) {
             return new ResponseEntity(new Message("El nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if (StringUtils.isBlank(dtoEdu.getNameE())) {
+        if (StringUtils.isBlank(dtoEdu.getName())) {
             return new ResponseEntity(new Message("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         Education education = sEducation.getOne(id).get();
 
-        education.setNameE(dtoEdu.getNameE());
-        education.setDescriptionE(dtoEdu.getDescriptionE());
+        education.setName(dtoEdu.getName());
+        education.setDescription(dtoEdu.getDescription());
+        education.setInstitution(dtoEdu.getInstitution());
+        education.setPeriod(dtoEdu.getPeriod());
+        education.setLogo(dtoEdu.getLogo());
 
         sEducation.save(education);
 

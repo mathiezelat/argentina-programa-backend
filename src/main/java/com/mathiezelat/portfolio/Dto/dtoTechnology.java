@@ -9,15 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class dtoEducation {
+public class dtoTechnology {
     @NotBlank
     private String name;
     @NotBlank
-    private String description;
-    @NotBlank
-    private String institution;
-    @NotBlank
-    private String period;
-    @NotBlank
-    private String logo;
+    private int percent;
 }

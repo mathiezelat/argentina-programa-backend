@@ -45,14 +45,15 @@ public class CExperience {
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody dtoExperience dtoExp) {
-        if (StringUtils.isBlank(dtoExp.getNameE())) {
+        if (StringUtils.isBlank(dtoExp.getName())) {
             return new ResponseEntity(new Message("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (sExperiencie.existsByNameE(dtoExp.getNameE())) {
+        if (sExperiencie.existsByName(dtoExp.getName())) {
             return new ResponseEntity(new Message("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Experience experience = new Experience(0, dtoExp.getNameE(), dtoExp.getDescriptionE());
+        Experience experience = new Experience(0, dtoExp.getName(), dtoExp.getDescription(), dtoExp.getCompany(),
+                dtoExp.getPeriod(), dtoExp.getPosition(), dtoExp.getLogo());
         sExperiencie.save(experience);
 
         return new ResponseEntity(new Message("Experiencia agregada"), HttpStatus.OK);
@@ -64,18 +65,22 @@ public class CExperience {
             return new ResponseEntity(new Message("El ID no existe"), HttpStatus.BAD_REQUEST);
         }
 
-        if (sExperiencie.existsByNameE(dtoExp.getNameE()) &&
-                sExperiencie.getByNameE(dtoExp.getNameE()).get().getId() != id) {
+        if (sExperiencie.existsByName(dtoExp.getName()) &&
+                sExperiencie.getByName(dtoExp.getName()).get().getId() != id) {
             return new ResponseEntity(new Message("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        if (StringUtils.isBlank(dtoExp.getNameE())) {
+        if (StringUtils.isBlank(dtoExp.getName())) {
             return new ResponseEntity(new Message("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
 
         Experience experience = sExperiencie.getOne(id).get();
-        experience.setNameE(dtoExp.getNameE());
-        experience.setDescriptionE(dtoExp.getDescriptionE());
+        experience.setName(dtoExp.getName());
+        experience.setDescription(dtoExp.getDescription());
+        experience.setCompany(dtoExp.getCompany());
+        experience.setPeriod(dtoExp.getPeriod());
+        experience.setPosition(dtoExp.getPosition());
+        experience.setLogo(dtoExp.getLogo());
 
         sExperiencie.save(experience);
         return new ResponseEntity(new Message("Experiencia actualizada"), HttpStatus.OK);

@@ -9,7 +9,7 @@ import com.mathiezelat.portfolio.Entity.Experience;
 
 @Repository
 public interface RExperience extends JpaRepository<Experience, Integer> {
-    public Optional<Experience> findByNameE(String nameE);
+    public Optional<Experience> findByName(String name);
 
-    public boolean existsByNameE(String nameE);
+    public boolean existsByName(String name);
 }

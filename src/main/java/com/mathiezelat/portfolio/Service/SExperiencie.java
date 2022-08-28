@@ -25,8 +25,8 @@ public class SExperiencie {
         return rExperience.findById(id);
     }
 
-    public Optional<Experience> getByNameE(String nameE) {
-        return rExperience.findByNameE(nameE);
+    public Optional<Experience> getByName(String name) {
+        return rExperience.findByName(name);
     }
 
     public void save(Experience exp) {
@@ -41,7 +41,7 @@ public class SExperiencie {
         return rExperience.existsById(id);
     }
 
-    public boolean existsByNameE(String nameE) {
-        return rExperience.existsByNameE(nameE);
+    public boolean existsByName(String name) {
+        return rExperience.existsByName(name);
     }
 }

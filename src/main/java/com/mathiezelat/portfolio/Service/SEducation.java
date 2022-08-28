@@ -25,8 +25,8 @@ public class SEducation {
         return rEducation.findById(id);
     }
 
-    public Optional<Education> getByNameE(String nameE) {
-        return rEducation.findByNameE(nameE);
+    public Optional<Education> getByName(String name) {
+        return rEducation.findByName(name);
     }
 
     public void save(Education education) {
@@ -41,7 +41,7 @@ public class SEducation {
         return rEducation.existsById(id);
     }
 
-    public boolean existsByNameE(String nameE) {
-        return rEducation.existsByNameE(nameE);
+    public boolean existsByName(String name) {
+        return rEducation.existsByName(name);
     }
 }
