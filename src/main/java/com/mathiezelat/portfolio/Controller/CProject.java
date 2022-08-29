@@ -67,7 +67,8 @@ public class CProject {
         if (!sProject.existsById(id)) {
             return new ResponseEntity(new Message("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        if (sProject.existsByName(dtoPro.getName())) {
+        if (sProject.existsByName(dtoPro.getName()) &&
+                sProject.getByName(dtoPro.getName()).get().getId() != id) {
             return new ResponseEntity(new Message("El nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoPro.getName())) {

@@ -65,7 +65,8 @@ public class CTechnology {
         if (!sTechnology.existsById(id)) {
             return new ResponseEntity(new Message("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        if (sTechnology.existsByName(dtoTech.getName())) {
+        if (sTechnology.existsByName(dtoTech.getName()) &&
+                sTechnology.getByName(dtoTech.getName()).get().getId() != id) {
             return new ResponseEntity(new Message("El nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoTech.getName())) {
