@@ -23,7 +23,7 @@ import com.mathiezelat.portfolio.Service.STechnology;
 
 @Controller
 @RequestMapping("/technologies")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
 public class CTechnology {
     @Autowired
     STechnology sTechnology;

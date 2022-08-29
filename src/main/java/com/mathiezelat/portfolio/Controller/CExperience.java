@@ -23,7 +23,7 @@ import com.mathiezelat.portfolio.Service.SExperiencie;
 
 @Controller
 @RequestMapping("/experience")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
 public class CExperience {
     @Autowired
     SExperiencie sExperiencie;

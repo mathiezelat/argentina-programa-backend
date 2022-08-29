@@ -22,7 +22,7 @@ import com.mathiezelat.portfolio.Interface.IPersonService;
 import com.mathiezelat.portfolio.Security.Controller.Message;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
 @RequestMapping("/persons")
 public class PersonController {
     @Autowired

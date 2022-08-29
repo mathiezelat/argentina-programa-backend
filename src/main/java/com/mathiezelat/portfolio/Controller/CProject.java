@@ -23,7 +23,7 @@ import com.mathiezelat.portfolio.Service.SProject;
 
 @Controller
 @RequestMapping("/projects")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://ar-portfolio-mel.web.app")
 public class CProject {
     @Autowired
     SProject sProject;
